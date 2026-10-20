@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>OwkCopy</AssemblyName>
+    <RootNamespace>OwkCopy</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>owk.ico</ApplicationIcon>
+    <NoWarn>$(NoWarn);WPF0001</NoWarn>
+    <Version>1.0.0</Version>
+    <Product>Owk Copy</Product>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Include="System.IO" />
+    <!-- WinForms is only used for the tray icon; keep its types out of global scope. -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="owk.ico" />
+    <None Remove="owk.png" />
+  </ItemGroup>
+</Project>
